@@ -1,0 +1,31 @@
+<!--pages/first/first.wxml-->
+
+<view>
+
+  <!--导航栏-->
+  <view class="list">
+    <view class="{{home?'blue':'default'}}" bindtap='home'>主页</view>
+    <view class="{{myinvite?'blue':'default'}}" bindtap='myinvite'>我的状态</view>
+  </view>
+
+  <view class='first-content'>
+    <!--主页的内容-->
+    <view class="{{home?'show':'hidden'}}">
+      <navigator url="../invite/invite" class='first-cell-rect'>发起邀请</navigator>
+      <text>\n</text>
+      <navigator url="../recept/recept" class='first-cell-rect'>接受邀请</navigator>
+    </view>
+
+    <!-- 我的状态 的内容-->
+    <view class="{{myinvite?'show':'hidden'}}">
+
+      <view>
+        <navigator url='../myinvite/myinvite'>我的邀请</navigator>
+        <text>\n</text>
+        <navigator url='../accepted/accepted'>已接受</navigator>
+      </view>
+
+    </view>
+  </view> 
+
+</view>

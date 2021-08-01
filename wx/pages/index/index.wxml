@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="card_wrap">
+    <view bindtouchend="slidethis" animation="{{id === 0 ? animationData : ''}}" class="card_item card{{ id + 1 }} " wx:for="{{ cardInfoList }}"  wx:key="unique" wx:for-index="id" wx:for-item="item">
+      <span class="change_icon" bindtap="slidethis" wx:if="{{ id === 0 }}">
+        <image src="../../image/changeicon.png"></image>
+      </span>
+      <view class="card_info">
+        <blockquote class="card_info_mes_title">{{ item.cardInfo.cardTitle }}</blockquote>
+
+        <span class="card_info_mes_item font-light content3" wx:for="{{item.cardInfo.cardInfoMes }}"  wx:key="unique2" wx:for-index="idx" wx:for-item="cradMes"  style="margin-top: {{  idx === 0 ? 15 : 0 }}px;">
+          {{ cradMes }}
+        </span>
+        <!--<span class="card_info_mes_item">运动是一切生命的源泉</span>
+        <span class="card_info_mes_item">运动是健康的源泉，也是长寿的秘诀</span> !-->
+      </view>
+      <button class="btn-cta buy_btn" id="{{ id }}"  open-type='getUserInfo' bindtap="buythis">立即体验</button>
+      <image src="{{ item.cardUrl }}"></image>
+    </view>
+     <view class="card_item card2">
+      <span class="change_icon">
+        <image src="../../image/changeicon.png"></image>
+      </span>
+      <view class="card_info">
+      <!--  <blockquote class="card_info_mes_title">伴你同行</blockquote>
+        <span class="card_info_mes_item" style="margin-top: 15px;">
+          生命在于运动
+        </span>
+        <span class="card_info_mes_item">运动是一切生命的源泉</span>
+        <span class="card_info_mes_item">运动是健康的源泉，也是长寿的秘诀</span>
+      </view>
+      <image src="../../image/3.jpg"></image>
+    </view>
+    <view class="card_item card3">
+      <span class="change_icon">
+        <image src="../../image/changeicon.png"></image>
+      </span>
+      <view class="card_info">
+        <blockquote class="card_info_mes_title">伴你同行</blockquote>
+        <span class="card_info_mes_item" style="margin-top: 15px;">
+          生命在于运动
+        </span>
+        <span class="card_info_mes_item">运动是一切生命的源泉</span>
+        <span class="card_info_mes_item">运动是健康的源泉，也是长寿的秘诀</span>!-->
+      </view>
+      <image src="../../image/2.jpg"></image>
+    </view> 
+  </view>
+</view>

@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/first/first",
+    "pages/invite/invite",
+    "pages/recept/recept",
+    "pages/detail/detail",
+    "pages/myinvite/myinvite",
+    "pages/mydetail/mydetail",
+    "pages/accepted/accepted"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#87CEFA",
+    "navigationBarTitleText": "伴我同行",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,88 @@
+/**invite.wxss**/
+.right{
+  background-color: #eeeeee;
+  flex: auto;
+}
+
+.sub{
+  float: buttom;
+  padding-top:50rpx
+}
+
+.invite-cell {
+  padding: 30rpx 40rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction:row;
+  border-bottom: 1rpx solid #D9D9D9;
+}
+
+.invite-cell-location{
+  padding: 30rpx 40rpx;
+  display: flex;
+  border-bottom: 1rpx solid #D9D9D9;
+}
+
+.invite-body {
+  position: relative;
+  margin-top: 1.17647059em;
+  background-color: #eeeeee;
+  line-height: 1.41176471;
+  font-size: 35rpx;
+  border-top: 1rpx solid #c9c9c9;
+}
+
+.invite-cell-rect:active {
+  background-color: #ECECEC;
+}
+
+.invite-cell-location-img {
+  width: 60rpx;
+  height: 60rpx;
+  position:relative;
+  left:390rpx;
+}
+
+.invite-cell-picker{
+   position:relative;
+  left: 400rpx;
+}
+
+.invite-loc{
+  padding: 30rpx 40rpx;
+  font-size:15px;
+  border-bottom: 1rpx solid #D9D9D9;
+  height: 50px;
+}
+
+.invite-age{
+  border: 3rpx solid #D9D9D9;
+  width: 80rpx;
+  position:relative;
+  left: 490rpx;
+}
+
+.invite-time{
+  position:relative;
+  left: 270rpx;
+}
+
+.limit-people{
+  border: 3rpx solid #D9D9D9;
+  width: 80rpx;
+  position:relative;
+  left: 400rpx;
+}
+.phone-number{
+  border: 3rpx solid #D9D9D9;
+  width: 210rpx;
+  position:relative;
+  left: 310rpx;
+}
+.adddetail{
+  padding: 10px;
+  border: 2px solid #eee;
+  margin: auto;
+  height: 100px;
+}

@@ -1,0 +1,44 @@
+<!--pages/invite/invite.wxml-->
+<button  bindtap='right' class='right'>授权中心</button>
+<view>
+<form bindsubmit='formSubmit' bindreset='formReset'
+report-submit='true'>
+<view class='invite-body'>
+<picker mode="selector" bindchange="sport_type" value="{{index1}}" range="{{array1}}" class='invite-cell  invite-cell-rect' name="sport">运动类别<text style='color:red'>*</text><text class='invite-cell-picker'  ><text wx:if="{{index1==''}}" style='color:#D9D9D9'>请选择</text>{{array1[index1]}}</text>
+</picker>
+
+<picker mode="selector" bindchange="sex" value="{{index2}}" range="{{array2}}" class='invite-cell invite-cell-rect' name="sex">本人性别<text style='color:red'>*</text><text class='invite-cell-picker'><text wx:if="{{index2==''}}" style='color:#D9D9D9'>请选择</text>{{array2[index2]}}</text></picker>
+
+<view class='invite-cell invite-cell-rect'>年龄<input type='number' name="age" class='invite-age' maxlength='2'></input></view>
+
+<view class='invite-cell-location invite-cell-rect' bindtap='location' >运动地点<text style='color:red'>*</text><image src="/image/map.png" class="invite-cell-location-img"></image></view>
+
+<textarea class='invite-loc' hidden='{{loc_flag}}' name='adress' value="【地址名称】 {{loc_name}}"></textarea>
+<view hidden='true'>
+<input type='digit' value='{{latitude}}' name='lat'></input>
+<input type='digit' value='{{longitude}}' name='lon'></input>
+</view>
+
+<picker mode="time" start="{{timenow}}" end="24:00" class='invite-cell invite-cell-rect' bindchange='bindTimeChange' name="time">截止时间<text style='color:red'>*仅于今日</text>
+<text class='invite-time'><text wx:if="{{!time}}" style='color:#D9D9D9'>请选择</text>{{time}}</text></picker>
+
+<view class='invite-cell invite-cell-rect'>限制人数<text style='color:red'>*</text><input type='number' name="limit" class='limit-people' confirm-type='next' maxlength='2'></input></view>
+
+<view class='invite-cell invite-cell-rect'>手机号<text style='color:red'>*</text><input class='phone-number' confirm-type='done' type='number' name="phone_number" maxlength='11'></input>
+</view>
+  <!--<view class='invite-cell invite-cell-rect'>
+    添加说明<switch class='detail' bindchange='detailchange'/>
+    
+  </view>
+  <textarea hidden='{{!addinfo}}' class='adddetail' name='adddetail'></textarea>-->
+</view>
+
+<view>
+<view class='sub'>
+<button disabled='{{(!index1)||(!index2)||loc_flag||(!time)}}' formType='submit'  plain='true' open-type='getUserInfo'>提交</button></view>
+<view class='sub'>
+<button plain='true' formType='reset'>重置</button></view>
+</view>
+</form>
+</view>
+

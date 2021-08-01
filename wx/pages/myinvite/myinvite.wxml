@@ -1,0 +1,14 @@
+<!--pages/myinvite/myinvite.wxml-->
+<view class='myinvite'>
+  <view  wx:for="{{array}}" wx:key="{{index}}">
+  <navigator class="recept-cell" url='../mydetail/mydetail?id={{array[index].id}}'>
+  {{array[index].nickName}}<text>\n</text>
+  <image src='{{array[index].avatarUrl}}'class='avatar'></image><text>\n</text>
+  于{{array[index].date}}发起邀请<text>\n</text>
+  运动类型：{{array1[array[index].sport]}}<text>\n</text>
+  运动地址：{{array[index].adress}}
+  </navigator>
+  </view>
+
+  <view wx:if='{{array==null}}' class='none'>今日暂无未截止的‘我的邀请’</view>
+</view>

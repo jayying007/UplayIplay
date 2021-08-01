@@ -1,0 +1,30 @@
+<!--pages/recept/recept.wxml-->
+
+<view class='list'>
+  <view  bindtap='near'  class="{{all?'tap':'no'}}">只显示附近</view>
+  <view  bindtap='all'  class="{{near?'tap':'no'}}">显示全部</view>
+</view>
+<view class='content'>
+  <!--附近的邀请-->
+  <view hidden='{{near}}' wx:for="{{array}}" wx:key="{{index}}" wx:if="{{array[index].latitude<=lat+0.2&&array[index].latitude>=lat-0.2&&array[index].longitude<=lon+0.2&&array[index].longitude>=lon-0.2}}">
+  <navigator class="recept-cell" url='../detail/detail?index={{index}}'>
+  {{array[index].nickName}}<text>\n</text>
+  <image src='{{array[index].avatarUrl}}'class='avatar'></image><text>\n</text>
+  于{{array[index].date}}发起邀请<text>\n</text>
+  运动类型：{{array1[array[index].sport]}}<text>\n</text>
+  运动地址：{{array[index].adress}}
+  </navigator>
+  </view>
+
+
+  <!--全部的邀请-->
+  <view hidden='{{all}}' wx:for="{{array}}" wx:key="{{index}}" >
+  <navigator class="recept-cell" url='../detail/detail?index={{index}}'>
+  {{array[index].nickName}}<text>\n</text>
+  <image src='{{array[index].avatarUrl}}'class='avatar'></image><text>\n</text>
+  于{{array[index].date}}发起邀请<text>\n</text>
+  运动类型：{{array1[array[index].sport]}}<text>\n</text>
+  运动地址：{{array[index].adress}}
+  </navigator>
+  </view>
+</view>

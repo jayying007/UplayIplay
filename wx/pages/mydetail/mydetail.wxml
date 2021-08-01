@@ -1,0 +1,29 @@
+<!--pages/mydetail/mydetail.wxml-->
+<view class='userinfo'>
+<image src='{{array[index].avatarUrl}}'class='avatar'></image>
+<text>{{array[index].nickName}}</text>
+<text>\n</text>
+于{{array[index].date}}发起邀请
+<text>\n已有 {{array[index].invite_people}} 人与您匹配</text>
+</view>
+<text>\n</text>
+
+<view class='detail'>
+运动类型：{{array1[array[index].sport]}}<text>\n</text>
+性别：{{array2[array[index].sex]}}<text>\n</text>
+年龄：{{array[index].age}}<text>\n</text>
+运动地址：{{array[index].adress}}<text>\n</text>
+截止时间：{{array[index].time}}<text>\n</text>
+限制人数：{{array[index].limit_people}}人<text>\n</text>
+<!--详细说明：<text>\n</text>{{array[index].adddetail}}-->
+<text>\n</text>
+</view>
+
+<form bindsubmit='end'>
+<view hidden='true'>
+  <input type='text' name="id" value='{{array[index].id}}'></input>
+  </view>
+  <button form-type='submit'>结束/取消邀请</button>
+</form>
+
+

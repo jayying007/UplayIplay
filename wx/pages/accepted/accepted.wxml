@@ -1,0 +1,41 @@
+<!--pages/accepted/accepted.wxml-->
+<view class='none' wx:if='{{array==null}}'>您暂无接受的邀请<text>或他人已结束发起 请按下面取消键</text>
+<button bindtap='back'>取消</button>
+</view>
+
+<view wx:else>
+<view class='userinfo'>
+<image src='{{array[0].avatarUrl}}'class='avatar'></image>
+<text>{{array[0].nickName}}</text>
+<text>\n</text>
+您已与他/她匹配
+<text>已有 {{array[0].invite_people}} 人与他/她匹配</text>
+<text>详细信息：</text>
+</view>
+
+<view class='detail'>
+运动类型：{{array1[array[0].sport]}}<text>\n</text>
+性别：{{array2[array[0].sex]}}<text>\n</text>
+年龄：{{array[0].age}}<text>\n</text>
+运动地址：{{array[0].adress}}<text>\n</text>
+截止时间：{{array[0].time}}<text>\n</text>
+限制人数：{{array[0].limit_people}}人<text>\n</text>
+<!--详细说明：<text>\n</text>{{array[index].adddetail}}-->
+<text>\n</text>
+</view>
+
+<form bindsubmit='call'>
+<view hidden='true'>
+<input type='text' name="phone_number" value='{{array[0].phone_number}}'></input>
+</view>
+<button form-type='submit'>打电话</button>
+</form>
+
+<form bindsubmit='refuse'>
+<view hidden='true'>
+  <input type='text' name="invite_people" value='{{array[0].invite_people}}'></input>
+  </view>
+  <button form-type='submit'>取消接受</button>
+</form>
+
+</view>
